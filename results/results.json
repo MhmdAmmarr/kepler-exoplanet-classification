@@ -1,0 +1,1253 @@
+{
+ "leak_pdisp_agree": [
+  7577,
+  7587
+ ],
+ "no_fit": {
+  "FALSE POSITIVE": 257,
+  "CANDIDATE": 104,
+  "CONFIRMED": 2
+ },
+ "n_labeled": 7328,
+ "n_candidates": 1873,
+ "n_stars": 6424,
+ "n_confirmed": 2746,
+ "n_fp": 4582,
+ "pos_rate": 0.37472707423580787,
+ "core_missing": 26,
+ "n_corr_pairs_09": 21,
+ "diag_missing_by_class": {
+  "missing in FP": {
+   "koi_num_transits": 0.1076,
+   "koi_max_sngle_ev": 0.1076,
+   "koi_max_mult_ev": 0.1076,
+   "koi_bin_oedp_sig": 0.1499,
+   "koi_fwm_stat_sig": 0.1624,
+   "koi_dicco_msky": 0.0904,
+   "koi_dikco_msky": 0.086
+  },
+  "missing in confirmed": {
+   "koi_num_transits": 0.004,
+   "koi_max_sngle_ev": 0.004,
+   "koi_max_mult_ev": 0.004,
+   "koi_bin_oedp_sig": 0.0058,
+   "koi_fwm_stat_sig": 0.0488,
+   "koi_dicco_msky": 0.0044,
+   "koi_dikco_msky": 0.0036
+  }
+ },
+ "n_train": 5861,
+ "n_test": 1467,
+ "test_pos_rate": 0.37491479209270623,
+ "lr_grid": [
+  [
+   0.01,
+   0.9104,
+   0.9105,
+   0.0093
+  ],
+  [
+   0.1,
+   0.932,
+   0.9309,
+   0.0091
+  ],
+  [
+   1.0,
+   0.9407,
+   0.9384,
+   0.0088
+  ],
+  [
+   10.0,
+   0.9447,
+   0.942,
+   0.0083
+  ],
+  [
+   100.0,
+   0.9462,
+   0.942,
+   0.0094
+  ]
+ ],
+ "cv": {
+  "Logistic regression": {
+   "cv_prauc": 0.9419997144495286,
+   "cv_prauc_std": 0.00825332590843374,
+   "train_prauc": 0.944721938325204
+  },
+  "Gradient boosting": {
+   "cv_prauc": 0.9701057183252324,
+   "cv_prauc_std": 0.007859055824925323,
+   "train_prauc": 1.0
+  },
+  "Neural network (MLP)": {
+   "cv_prauc": 0.9667976409668066,
+   "cv_prauc_std": 0.007619765288930052,
+   "train_prauc": 0.9780766736591033
+  }
+ },
+ "best_params": {
+  "Logistic regression": {
+   "clf__C": 10
+  },
+  "Gradient boosting": {
+   "l2_regularization": 1.8274508859816028,
+   "learning_rate": 0.11069143219393454,
+   "max_depth": 6,
+   "max_iter": 388,
+   "max_leaf_nodes": 19,
+   "min_samples_leaf": 50
+  },
+  "Neural network (MLP)": {
+   "clf__activation": "relu",
+   "clf__alpha": 0.027527173929429397,
+   "clf__batch_size": 256,
+   "clf__hidden_layer_sizes": "(128, 64)",
+   "clf__learning_rate_init": 0.0007961566078062948
+  }
+ },
+ "tune_time_s": {
+  "Logistic regression": 2.5180232524871826,
+  "Gradient boosting": 131.64522242546082,
+  "Neural network (MLP)": 85.90054035186768
+ },
+ "learning_curve": {
+  "Logistic regression": {
+   "sizes": [
+    468,
+    1523,
+    2578,
+    3633,
+    4689
+   ],
+   "train": [
+    0.987,
+    0.981,
+    0.9679,
+    0.9522,
+    0.9447
+   ],
+   "val": [
+    0.8344,
+    0.9102,
+    0.9386,
+    0.9404,
+    0.942
+   ]
+  },
+  "Gradient boosting": {
+   "sizes": [
+    468,
+    1523,
+    2578,
+    3633,
+    4689
+   ],
+   "train": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "val": [
+    0.886,
+    0.9421,
+    0.9659,
+    0.9685,
+    0.9699
+   ]
+  },
+  "Neural network (MLP)": {
+   "sizes": [
+    468,
+    1523,
+    2578,
+    3633,
+    4689
+   ],
+   "train": [
+    0.9778,
+    0.9774,
+    0.9808,
+    0.9794,
+    0.9791
+   ],
+   "val": [
+    0.5752,
+    0.819,
+    0.9595,
+    0.9649,
+    0.9668
+   ]
+  }
+ },
+ "test": {
+  "Logistic regression": {
+   "PR-AUC": 0.95,
+   "ROC-AUC": 0.9712,
+   "Precision": 0.841,
+   "Recall": 0.9327,
+   "F1": 0.8845,
+   "Accuracy": 0.9087,
+   "Brier": 0.0662
+  },
+  "Gradient boosting": {
+   "PR-AUC": 0.9754,
+   "ROC-AUC": 0.9871,
+   "Precision": 0.9213,
+   "Recall": 0.9582,
+   "F1": 0.9394,
+   "Accuracy": 0.9536,
+   "Brier": 0.0398
+  },
+  "Neural network (MLP)": {
+   "PR-AUC": 0.9634,
+   "ROC-AUC": 0.981,
+   "Precision": 0.9052,
+   "Recall": 0.92,
+   "F1": 0.9125,
+   "Accuracy": 0.9339,
+   "Brier": 0.0478
+  }
+ },
+ "cm_hgb": [
+  [
+   872,
+   45
+  ],
+  [
+   23,
+   527
+  ]
+ ],
+ "leakage": {
+  "Core (31)": {
+   "PR-AUC": 0.9754,
+   "ROC-AUC": 0.9871,
+   "Precision": 0.9213,
+   "Recall": 0.9582,
+   "F1": 0.9394,
+   "Accuracy": 0.9536,
+   "Brier": 0.0398
+  },
+  "+ pipeline diagnostics (38)": {
+   "PR-AUC": 0.9971,
+   "ROC-AUC": 0.9982,
+   "Precision": 0.9745,
+   "Recall": 0.9745,
+   "F1": 0.9745,
+   "Accuracy": 0.9809,
+   "Brier": 0.0154
+  },
+  "+ Kepler vetting outputs (leaky)": {
+   "PR-AUC": 0.9969,
+   "ROC-AUC": 0.9991,
+   "Precision": 0.9982,
+   "Recall": 0.9982,
+   "F1": 0.9982,
+   "Accuracy": 0.9986,
+   "Brier": 0.0013
+  },
+  "koi_score alone (existing system)": {
+   "PR-AUC": 0.9749,
+   "ROC-AUC": 0.9861,
+   "Precision": 0.9705,
+   "Recall": 0.9582,
+   "F1": 0.9643,
+   "Accuracy": 0.9734,
+   "Brier": 0.0238
+  }
+ },
+ "diag_check": {
+  "koi_num_transits": {
+   "univariate ROC-AUC": 0.62,
+   "missing %": 6.927,
+   "corr with fpflag_co": 0.338,
+   "corr with fpflag_ss": 0.034
+  },
+  "koi_max_sngle_ev": {
+   "univariate ROC-AUC": 0.607,
+   "missing %": 6.927,
+   "corr with fpflag_co": -0.271,
+   "corr with fpflag_ss": 0.523
+  },
+  "koi_max_mult_ev": {
+   "univariate ROC-AUC": 0.525,
+   "missing %": 6.927,
+   "corr with fpflag_co": -0.253,
+   "corr with fpflag_ss": 0.533
+  },
+  "koi_bin_oedp_sig": {
+   "univariate ROC-AUC": 0.567,
+   "missing %": 9.794,
+   "corr with fpflag_co": 0.198,
+   "corr with fpflag_ss": -0.217
+  },
+  "koi_fwm_stat_sig": {
+   "univariate ROC-AUC": 0.766,
+   "missing %": 12.012,
+   "corr with fpflag_co": -0.439,
+   "corr with fpflag_ss": -0.43
+  },
+  "koi_dicco_msky": {
+   "univariate ROC-AUC": 0.699,
+   "missing %": 5.886,
+   "corr with fpflag_co": 0.635,
+   "corr with fpflag_ss": -0.119
+  },
+  "koi_dikco_msky": {
+   "univariate ROC-AUC": 0.689,
+   "missing %": 5.579,
+   "corr with fpflag_co": 0.667,
+   "corr with fpflag_ss": -0.151
+  }
+ },
+ "sensitivity": {
+  "Gradient boosting": {
+   "PR-AUC mean": 0.9706727454564315,
+   "PR-AUC std": 0.006019702586725618,
+   "PR-AUC min": 0.9640784702409894,
+   "PR-AUC max": 0.9768266771274876,
+   "F1 mean": 0.923510194088547,
+   "F1 std": 0.003491606068563036
+  },
+  "Logistic regression": {
+   "PR-AUC mean": 0.9439662999759891,
+   "PR-AUC std": 0.009960725571225203,
+   "PR-AUC min": 0.9296146920472761,
+   "PR-AUC max": 0.9544969409722444,
+   "F1 mean": 0.8780892607360903,
+   "F1 std": 0.005750513631403238
+  },
+  "Neural network (MLP)": {
+   "PR-AUC mean": 0.9653021766284866,
+   "PR-AUC std": 0.00792695064932414,
+   "PR-AUC min": 0.9566356055754843,
+   "PR-AUC max": 0.9746544373789323,
+   "F1 mean": 0.9153141474042388,
+   "F1 std": 0.006210495759615356
+  }
+ },
+ "sens_wins": [
+  "Gradient boosting",
+  "Gradient boosting",
+  "Gradient boosting",
+  "Gradient boosting",
+  "Gradient boosting"
+ ],
+ "sens_hgb_minus_mlp": [
+  0.0023,
+  0.007,
+  0.0066,
+  0.0022,
+  0.0087
+ ],
+ "calibration": {
+  "Logistic regression": {
+   "Before recalibration": {
+    "ECE": 0.03783570546188991,
+    "Brier": 0.06623147275551426
+   },
+   "After isotonic recalibration": {
+    "ECE": 0.015985227091825482,
+    "Brier": 0.06305402482014028
+   }
+  },
+  "Gradient boosting": {
+   "Before recalibration": {
+    "ECE": 0.0248424602576741,
+    "Brier": 0.03976277512402762
+   },
+   "After isotonic recalibration": {
+    "ECE": 0.017804741029067,
+    "Brier": 0.04001826833716114
+   }
+  },
+  "Neural network (MLP)": {
+   "Before recalibration": {
+    "ECE": 0.016823192173615154,
+    "Brier": 0.047803231110552076
+   },
+   "After isotonic recalibration": {
+    "ECE": 0.015129236156931007,
+    "Brier": 0.048393229640413336
+   }
+  }
+ },
+ "lr_top_coef": {
+  "koi_depth": -15.647,
+  "koi_impact": -7.802,
+  "koi_ror": -3.98,
+  "log_koi_model_snr": 3.173,
+  "log_koi_period": 2.821,
+  "koi_dor": -2.811,
+  "log_koi_insol": 2.488,
+  "koi_sma": -2.172,
+  "log_koi_dor": 2.114,
+  "koi_duration": -1.661
+ },
+ "perm_top": {
+  "koi_model_snr": 0.0795,
+  "koi_prad": 0.029,
+  "koi_count": 0.0257,
+  "koi_dor": 0.0124,
+  "koi_ror": 0.0104,
+  "koi_smet": 0.0102,
+  "log_density_ratio": 0.0082,
+  "koi_impact": 0.0056,
+  "koi_depth": 0.0051,
+  "koi_duration": 0.0048
+ },
+ "shap_top": {
+  "koi_prad": 1.3995,
+  "koi_model_snr": 1.3602,
+  "koi_count": 1.2335,
+  "koi_ror": 0.8815,
+  "koi_dor": 0.8408,
+  "koi_depth": 0.6232,
+  "koi_smet": 0.5054,
+  "log_density_ratio": 0.4923,
+  "koi_impact": 0.4511,
+  "koi_duration": 0.4121
+ },
+ "ablation": {
+  "All 31 core": {
+   "CV PR-AUC": 0.9701,
+   "std": 0.0079,
+   "n features": 31.0
+  },
+  "No engineered (20 raw)": {
+   "CV PR-AUC": 0.9705,
+   "std": 0.007,
+   "n features": 20.0
+  },
+  "No host-star features": {
+   "CV PR-AUC": 0.9658,
+   "std": 0.0072,
+   "n features": 25.0
+  },
+  "No transit-fit features": {
+   "CV PR-AUC": 0.9606,
+   "std": 0.0112,
+   "n features": 17.0
+  },
+  "Only engineered (11)": {
+   "CV PR-AUC": 0.9518,
+   "std": 0.0138,
+   "n features": 11.0
+  }
+ },
+ "complexity": {
+  "Logistic regression": {
+   "Test PR-AUC": 0.95,
+   "Gain vs LR": 0.0,
+   "Fit time (s)": 0.0516,
+   "Tuning time (s)": 2.518,
+   "Predict (ms / 1k objects)": 0.9763,
+   "Parameters / tree nodes": 32.0,
+   "Model size (KB)": 3.4229
+  },
+  "Gradient boosting": {
+   "Test PR-AUC": 0.9754,
+   "Gain vs LR": 0.0253,
+   "Fit time (s)": 2.8293,
+   "Tuning time (s)": 131.6452,
+   "Predict (ms / 1k objects)": 11.3443,
+   "Parameters / tree nodes": 14018.0,
+   "Model size (KB)": 905.875
+  },
+  "Neural network (MLP)": {
+   "Test PR-AUC": 0.9634,
+   "Gain vs LR": 0.0134,
+   "Fit time (s)": 1.7751,
+   "Tuning time (s)": 85.9005,
+   "Predict (ms / 1k objects)": 1.7992,
+   "Parameters / tree nodes": 12417.0,
+   "Model size (KB)": 303.9697
+  }
+ },
+ "capacity": {
+  "iters": {
+   "10": 0.9401,
+   "25": 0.958,
+   "50": 0.9639,
+   "100": 0.9681,
+   "200": 0.97,
+   "400": 0.9701,
+   "800": 0.9697
+  },
+  "depth": {
+   "1": 0.9569,
+   "2": 0.9664,
+   "3": 0.9699,
+   "4": 0.97,
+   "6": 0.9701,
+   "8": 0.9702
+  },
+  "mlp_width": {
+   "(4,)": 0.941,
+   "(8,)": 0.9275,
+   "(16,)": 0.9494,
+   "(32,)": 0.9551,
+   "(64,)": 0.9618,
+   "(128,)": 0.9619,
+   "(128, 64)": 0.9668
+  }
+ },
+ "slices": {
+  "Signal-to-noise (SNR)": [
+   {
+    "bin": "<10",
+    "n": 636,
+    "confirmed": 0.0519,
+    "error_rate": 0.0535,
+    "missed_planets": 22,
+    "false_alarms": 12,
+    "PR-AUC": 0.4771
+   },
+   {
+    "bin": "10-15",
+    "n": 755,
+    "confirmed": 0.3126,
+    "error_rate": 0.1166,
+    "missed_planets": 36,
+    "false_alarms": 52,
+    "PR-AUC": 0.8984
+   },
+   {
+    "bin": "15-25",
+    "n": 1168,
+    "confirmed": 0.5711,
+    "error_rate": 0.0967,
+    "missed_planets": 35,
+    "false_alarms": 78,
+    "PR-AUC": 0.9638
+   },
+   {
+    "bin": "25-50",
+    "n": 1145,
+    "confirmed": 0.6122,
+    "error_rate": 0.0646,
+    "missed_planets": 24,
+    "false_alarms": 50,
+    "PR-AUC": 0.9796
+   },
+   {
+    "bin": "50-100",
+    "n": 610,
+    "confirmed": 0.5311,
+    "error_rate": 0.0541,
+    "missed_planets": 13,
+    "false_alarms": 20,
+    "PR-AUC": 0.9928
+   },
+   {
+    "bin": ">100",
+    "n": 1546,
+    "confirmed": 0.152,
+    "error_rate": 0.0201,
+    "missed_planets": 17,
+    "false_alarms": 14,
+    "PR-AUC": 0.9749
+   }
+  ],
+  "Planet radius (Earth radii)": [
+   {
+    "bin": "<1.25",
+    "n": 1003,
+    "confirmed": 0.3101,
+    "error_rate": 0.0947,
+    "missed_planets": 44,
+    "false_alarms": 51,
+    "PR-AUC": 0.9374
+   },
+   {
+    "bin": "1.25-2",
+    "n": 1163,
+    "confirmed": 0.5615,
+    "error_rate": 0.1023,
+    "missed_planets": 41,
+    "false_alarms": 78,
+    "PR-AUC": 0.9609
+   },
+   {
+    "bin": "2-4",
+    "n": 1414,
+    "confirmed": 0.6895,
+    "error_rate": 0.0679,
+    "missed_planets": 28,
+    "false_alarms": 68,
+    "PR-AUC": 0.9855
+   },
+   {
+    "bin": "4-8",
+    "n": 315,
+    "confirmed": 0.4825,
+    "error_rate": 0.0794,
+    "missed_planets": 11,
+    "false_alarms": 14,
+    "PR-AUC": 0.9805
+   },
+   {
+    "bin": "8-15",
+    "n": 229,
+    "confirmed": 0.3668,
+    "error_rate": 0.1048,
+    "missed_planets": 9,
+    "false_alarms": 15,
+    "PR-AUC": 0.9286
+   },
+   {
+    "bin": ">15",
+    "n": 1737,
+    "confirmed": 0.0121,
+    "error_rate": 0.0086,
+    "missed_planets": 14,
+    "false_alarms": 1,
+    "PR-AUC": 0.4165
+   }
+  ],
+  "Orbital period (days)": [
+   {
+    "bin": "<3",
+    "n": 1792,
+    "confirmed": 0.1462,
+    "error_rate": 0.0608,
+    "missed_planets": 50,
+    "false_alarms": 59,
+    "PR-AUC": 0.8762
+   },
+   {
+    "bin": "3-10",
+    "n": 1428,
+    "confirmed": 0.5231,
+    "error_rate": 0.0826,
+    "missed_planets": 43,
+    "false_alarms": 75,
+    "PR-AUC": 0.973
+   },
+   {
+    "bin": "10-30",
+    "n": 1222,
+    "confirmed": 0.5687,
+    "error_rate": 0.0761,
+    "missed_planets": 30,
+    "false_alarms": 63,
+    "PR-AUC": 0.9795
+   },
+   {
+    "bin": "30-100",
+    "n": 679,
+    "confirmed": 0.5405,
+    "error_rate": 0.0412,
+    "missed_planets": 11,
+    "false_alarms": 17,
+    "PR-AUC": 0.9852
+   },
+   {
+    "bin": ">100",
+    "n": 740,
+    "confirmed": 0.1689,
+    "error_rate": 0.0351,
+    "missed_planets": 13,
+    "false_alarms": 13,
+    "PR-AUC": 0.9608
+   }
+  ],
+  "Stellar brightness (Kepler mag)": [
+   {
+    "bin": "<12",
+    "n": 398,
+    "confirmed": 0.2487,
+    "error_rate": 0.0452,
+    "missed_planets": 7,
+    "false_alarms": 11,
+    "PR-AUC": 0.971
+   },
+   {
+    "bin": "12-13",
+    "n": 584,
+    "confirmed": 0.3099,
+    "error_rate": 0.0514,
+    "missed_planets": 12,
+    "false_alarms": 18,
+    "PR-AUC": 0.9615
+   },
+   {
+    "bin": "13-14",
+    "n": 1309,
+    "confirmed": 0.3415,
+    "error_rate": 0.0481,
+    "missed_planets": 28,
+    "false_alarms": 35,
+    "PR-AUC": 0.9709
+   },
+   {
+    "bin": "14-15",
+    "n": 1497,
+    "confirmed": 0.4562,
+    "error_rate": 0.0708,
+    "missed_planets": 39,
+    "false_alarms": 67,
+    "PR-AUC": 0.9763
+   },
+   {
+    "bin": "15-16",
+    "n": 1913,
+    "confirmed": 0.3978,
+    "error_rate": 0.0795,
+    "missed_planets": 59,
+    "false_alarms": 93,
+    "PR-AUC": 0.9639
+   },
+   {
+    "bin": ">16",
+    "n": 159,
+    "confirmed": 0.1572,
+    "error_rate": 0.0314,
+    "missed_planets": 2,
+    "false_alarms": 3,
+    "PR-AUC": 0.9824
+   }
+  ],
+  "KOIs on the same star": [
+   {
+    "bin": "1 (single)",
+    "n": 4458,
+    "confirmed": 0.2308,
+    "error_rate": 0.0651,
+    "missed_planets": 116,
+    "false_alarms": 174,
+    "PR-AUC": 0.9255
+   },
+   {
+    "bin": "2",
+    "n": 753,
+    "confirmed": 0.7384,
+    "error_rate": 0.081,
+    "missed_planets": 23,
+    "false_alarms": 38,
+    "PR-AUC": 0.9792
+   },
+   {
+    "bin": "3+",
+    "n": 650,
+    "confirmed": 0.94,
+    "error_rate": 0.0354,
+    "missed_planets": 8,
+    "false_alarms": 15,
+    "PR-AUC": 0.9963
+   }
+  ]
+ },
+ "oof_error_rate": 0.06381163623954957,
+ "failure_extra": {
+  "Unusual host star (IsolationForest, top 5%)": {
+   "0": {
+    "n": 5568,
+    "confirmed": 0.3888,
+    "error_rate": 0.0654
+   },
+   "1": {
+    "n": 293,
+    "confirmed": 0.1058,
+    "error_rate": 0.0341
+   }
+  },
+  "Any core feature missing": {
+   "0": {
+    "n": 5839,
+    "confirmed": 0.3761,
+    "error_rate": 0.0639
+   },
+   "1": {
+    "n": 22,
+    "confirmed": 0.0,
+    "error_rate": 0.0455
+   }
+  },
+  "confident_wrong": [
+   138,
+   374
+  ]
+ },
+ "pca_var": [
+  0.204,
+  0.162
+ ],
+ "flag_share_false_alarms": {
+  "nt": 0.11013215859030837,
+  "ss": 0.3788546255506608,
+  "co": 0.7268722466960352,
+  "ec": 0.33480176211453744
+ },
+ "flag_share_all_fp": {
+  "nt": 0.2935879945429741,
+  "ss": 0.4783083219645293,
+  "co": 0.40463847203274217,
+  "ec": 0.24583901773533423
+ },
+ "worst_fp": [
+  {
+   "kepoi_name": "K02570.01",
+   "label": 0,
+   "p": 1.0,
+   "koi_model_snr": 21.9,
+   "koi_prad": 1.81,
+   "koi_period": 79.92,
+   "log_density_ratio": -0.175,
+   "koi_count": 2,
+   "fpflags": "0010"
+  },
+  {
+   "kepoi_name": "K02050.01",
+   "label": 0,
+   "p": 1.0,
+   "koi_model_snr": 30.1,
+   "koi_prad": 1.6,
+   "koi_period": 75.379,
+   "log_density_ratio": 0.386,
+   "koi_count": 2,
+   "fpflags": "0111"
+  },
+  {
+   "kepoi_name": "K01803.02",
+   "label": 0,
+   "p": 1.0,
+   "koi_model_snr": 12.7,
+   "koi_prad": 1.37,
+   "koi_period": 12.72,
+   "log_density_ratio": -0.224,
+   "koi_count": 3,
+   "fpflags": "0001"
+  },
+  {
+   "kepoi_name": "K02159.02",
+   "label": 0,
+   "p": 0.999,
+   "koi_model_snr": 20.5,
+   "koi_prad": 1.33,
+   "koi_period": 2.393,
+   "log_density_ratio": -0.168,
+   "koi_count": 2,
+   "fpflags": "0010"
+  },
+  {
+   "kepoi_name": "K00989.04",
+   "label": 0,
+   "p": 0.999,
+   "koi_model_snr": 43.1,
+   "koi_prad": 2.92,
+   "koi_period": 4.08,
+   "log_density_ratio": -0.122,
+   "koi_count": 4,
+   "fpflags": "0010"
+  },
+  {
+   "kepoi_name": "K01196.01",
+   "label": 0,
+   "p": 0.999,
+   "koi_model_snr": 27.1,
+   "koi_prad": 3.32,
+   "koi_period": 3.982,
+   "log_density_ratio": 0.27,
+   "koi_count": 3,
+   "fpflags": "0011"
+  },
+  {
+   "kepoi_name": "K01953.01",
+   "label": 0,
+   "p": 0.999,
+   "koi_model_snr": 26.1,
+   "koi_prad": 2.09,
+   "koi_period": 15.16,
+   "log_density_ratio": -0.142,
+   "koi_count": 1,
+   "fpflags": "0010"
+  },
+  {
+   "kepoi_name": "K02713.01",
+   "label": 0,
+   "p": 0.999,
+   "koi_model_snr": 25.1,
+   "koi_prad": 1.72,
+   "koi_period": 21.391,
+   "log_density_ratio": 0.049,
+   "koi_count": 1,
+   "fpflags": "0110"
+  },
+  {
+   "kepoi_name": "K01712.01",
+   "label": 0,
+   "p": 0.999,
+   "koi_model_snr": 36.8,
+   "koi_prad": 2.72,
+   "koi_period": 10.161,
+   "log_density_ratio": 0.304,
+   "koi_count": 1,
+   "fpflags": "0001"
+  },
+  {
+   "kepoi_name": "K00724.01",
+   "label": 0,
+   "p": 0.999,
+   "koi_model_snr": 41.7,
+   "koi_prad": 2.07,
+   "koi_period": 6.971,
+   "log_density_ratio": -0.195,
+   "koi_count": 1,
+   "fpflags": "0010"
+  }
+ ],
+ "worst_fn": [
+  {
+   "kepoi_name": "K01450.01",
+   "label": 1,
+   "p": 0.0,
+   "koi_model_snr": 334.8,
+   "koi_prad": 59.19,
+   "koi_period": 2.145,
+   "log_density_ratio": -1.164,
+   "koi_count": 1,
+   "fpflags": "0100"
+  },
+  {
+   "kepoi_name": "K03794.01",
+   "label": 1,
+   "p": 0.0,
+   "koi_model_snr": 217.4,
+   "koi_prad": 22.95,
+   "koi_period": 0.654,
+   "log_density_ratio": -1.0,
+   "koi_count": 1,
+   "fpflags": "0000"
+  },
+  {
+   "kepoi_name": "K03728.01",
+   "label": 1,
+   "p": 0.0,
+   "koi_model_snr": 56.4,
+   "koi_prad": 22.27,
+   "koi_period": 5.546,
+   "log_density_ratio": 0.927,
+   "koi_count": 1,
+   "fpflags": "0000"
+  },
+  {
+   "kepoi_name": "K04706.01",
+   "label": 1,
+   "p": 0.001,
+   "koi_model_snr": 10.3,
+   "koi_prad": 1.31,
+   "koi_period": 101.952,
+   "log_density_ratio": 0.52,
+   "koi_count": 1,
+   "fpflags": "0000"
+  },
+  {
+   "kepoi_name": "K03503.02",
+   "label": 1,
+   "p": 0.001,
+   "koi_model_snr": 7.7,
+   "koi_prad": 0.8,
+   "koi_period": 31.825,
+   "log_density_ratio": -0.144,
+   "koi_count": 2,
+   "fpflags": "0000"
+  },
+  {
+   "kepoi_name": "K04072.01",
+   "label": 1,
+   "p": 0.001,
+   "koi_model_snr": 20.9,
+   "koi_prad": 2.24,
+   "koi_period": 0.693,
+   "log_density_ratio": 0.33,
+   "koi_count": 1,
+   "fpflags": "0000"
+  },
+  {
+   "kepoi_name": "K03503.01",
+   "label": 1,
+   "p": 0.002,
+   "koi_model_snr": 8.5,
+   "koi_prad": 0.79,
+   "koi_period": 21.188,
+   "log_density_ratio": -0.353,
+   "koi_count": 2,
+   "fpflags": "0000"
+  },
+  {
+   "kepoi_name": "K00846.01",
+   "label": 1,
+   "p": 0.002,
+   "koi_model_snr": 748.1,
+   "koi_prad": 13.84,
+   "koi_period": 27.808,
+   "log_density_ratio": -0.105,
+   "koi_count": 1,
+   "fpflags": "0000"
+  },
+  {
+   "kepoi_name": "K04024.01",
+   "label": 1,
+   "p": 0.002,
+   "koi_model_snr": 6.8,
+   "koi_prad": 1.95,
+   "koi_period": 8.407,
+   "log_density_ratio": 1.507,
+   "koi_count": 1,
+   "fpflags": "0000"
+  },
+  {
+   "kepoi_name": "K04053.01",
+   "label": 1,
+   "p": 0.002,
+   "koi_model_snr": 8.1,
+   "koi_prad": 0.85,
+   "koi_period": 1.42,
+   "log_density_ratio": 0.202,
+   "koi_count": 1,
+   "fpflags": "0000"
+  }
+ ],
+ "conf_by_snr": {
+  "(0.0, 10.0]": 0.4708,
+  "(10.0, 15.0]": 0.4354,
+  "(15.0, 25.0]": 0.4452,
+  "(25.0, 50.0]": 0.4612,
+  "(50.0, 100.0]": 0.471,
+  "(100.0, inf]": 0.4853
+ },
+ "conf_by_count": {
+  "1": 0.4606,
+  "2": 0.4614,
+  "3+": 0.4822
+ },
+ "selective": [
+  {
+   "band half-width": 0.0,
+   "coverage": 1.0,
+   "accuracy on kept": 0.953,
+   "objects sent to humans": 0
+  },
+  {
+   "band half-width": 0.05,
+   "coverage": 0.9768,
+   "accuracy on kept": 0.9581,
+   "objects sent to humans": 34
+  },
+  {
+   "band half-width": 0.1,
+   "coverage": 0.9571,
+   "accuracy on kept": 0.963,
+   "objects sent to humans": 63
+  },
+  {
+   "band half-width": 0.15,
+   "coverage": 0.9427,
+   "accuracy on kept": 0.9675,
+   "objects sent to humans": 84
+  },
+  {
+   "band half-width": 0.2,
+   "coverage": 0.923,
+   "accuracy on kept": 0.9719,
+   "objects sent to humans": 113
+  },
+  {
+   "band half-width": 0.25,
+   "coverage": 0.9216,
+   "accuracy on kept": 0.9719,
+   "objects sent to humans": 115
+  },
+  {
+   "band half-width": 0.3,
+   "coverage": 0.9127,
+   "accuracy on kept": 0.9739,
+   "objects sent to humans": 128
+  },
+  {
+   "band half-width": 0.35,
+   "coverage": 0.8657,
+   "accuracy on kept": 0.9803,
+   "objects sent to humans": 197
+  },
+  {
+   "band half-width": 0.4,
+   "coverage": 0.8105,
+   "accuracy on kept": 0.9882,
+   "objects sent to humans": 278
+  },
+  {
+   "band half-width": 0.45,
+   "coverage": 0.7069,
+   "accuracy on kept": 0.9923,
+   "objects sent to humans": 430
+  }
+ ],
+ "mitigation_centroid": {
+  "Core (31)": {
+   "PR-AUC": 0.9754,
+   "ROC-AUC": 0.9871,
+   "Precision": 0.9213,
+   "Recall": 0.9582,
+   "F1": 0.9394,
+   "Accuracy": 0.9536,
+   "Brier": 0.0398,
+   "false alarms among centroid-offset FPs": 33.0
+  },
+  "Core + 3 centroid diagnostics": {
+   "PR-AUC": 0.9973,
+   "ROC-AUC": 0.9983,
+   "Precision": 0.9693,
+   "Recall": 0.9764,
+   "F1": 0.9728,
+   "Accuracy": 0.9796,
+   "Brier": 0.0159,
+   "false alarms among centroid-offset FPs": 2.0
+  }
+ },
+ "n_co_test": 392,
+ "centroid_missingness_check": {
+  "Core (31)": {
+   "PR-AUC (all test)": 0.9754,
+   "PR-AUC (centroids present)": 0.9809,
+   "false alarms among centroid-offset FPs": 33
+  },
+  "+ centroid (missing kept)": {
+   "PR-AUC (all test)": 0.9973,
+   "PR-AUC (centroids present)": 0.9977,
+   "false alarms among centroid-offset FPs": 2
+  },
+  "+ centroid (median-imputed)": {
+   "PR-AUC (all test)": 0.9969,
+   "PR-AUC (centroids present)": 0.9976,
+   "false alarms among centroid-offset FPs": 3
+  }
+ },
+ "cand_top_multi_share": 0.625,
+ "cand_top_median_prad": 1.8650000000000002,
+ "cand_disagree": 6,
+ "candidates": {
+  "p_ge_09": 192,
+  "p_le_01": 804,
+  "p_mid": 877,
+  "spearman_koi_score": 0.27867185872654365,
+  "top10": [
+   {
+    "kepoi_name": "K01590.01",
+    "kepid": 5542466,
+    "koi_period": 12.89,
+    "koi_prad": 1.93,
+    "koi_model_snr": 23.6,
+    "koi_count": 3,
+    "koi_score": 0.998,
+    "planet_probability": 1.0,
+    "raw_score": 1.0
+   },
+   {
+    "kepoi_name": "K01590.03",
+    "kepid": 5542466,
+    "koi_period": 4.747,
+    "koi_prad": 1.3,
+    "koi_model_snr": 12.5,
+    "koi_count": 3,
+    "koi_score": 0.996,
+    "planet_probability": 0.995,
+    "raw_score": 1.0
+   },
+   {
+    "kepoi_name": "K03936.01",
+    "kepid": 4947556,
+    "koi_period": 141.609,
+    "koi_prad": 2.98,
+    "koi_model_snr": 43.3,
+    "koi_count": 2,
+    "koi_score": 0.0,
+    "planet_probability": 0.995,
+    "raw_score": 1.0
+   },
+   {
+    "kepoi_name": "K01053.02",
+    "kepid": 5956656,
+    "koi_period": 46.245,
+    "koi_prad": 2.46,
+    "koi_model_snr": 15.5,
+    "koi_count": 2,
+    "koi_score": 0.908,
+    "planet_probability": 0.995,
+    "raw_score": 1.0
+   },
+   {
+    "kepoi_name": "K00750.02",
+    "kepid": 10662202,
+    "koi_period": 5.044,
+    "koi_prad": 1.18,
+    "koi_model_snr": 10.2,
+    "koi_count": 4,
+    "koi_score": 0.915,
+    "planet_probability": 0.995,
+    "raw_score": 1.0
+   },
+   {
+    "kepoi_name": "K01628.03",
+    "kepid": 6975129,
+    "koi_period": 37.84,
+    "koi_prad": 1.76,
+    "koi_model_snr": 23.7,
+    "koi_count": 3,
+    "koi_score": 0.0,
+    "planet_probability": 0.995,
+    "raw_score": 1.0
+   },
+   {
+    "kepoi_name": "K04526.01",
+    "kepid": 3765917,
+    "koi_period": 30.539,
+    "koi_prad": 2.72,
+    "koi_model_snr": 15.0,
+    "koi_count": 2,
+    "koi_score": 0.924,
+    "planet_probability": 0.995,
+    "raw_score": 1.0
+   },
+   {
+    "kepoi_name": "K01338.02",
+    "kepid": 4466677,
+    "koi_period": 42.037,
+    "koi_prad": 1.66,
+    "koi_model_snr": 14.7,
+    "koi_count": 3,
+    "koi_score": 0.999,
+    "planet_probability": 0.995,
+    "raw_score": 1.0
+   },
+   {
+    "kepoi_name": "K01194.02",
+    "kepid": 3554031,
+    "koi_period": 14.862,
+    "koi_prad": 1.57,
+    "koi_model_snr": 14.4,
+    "koi_count": 3,
+    "koi_score": 0.0,
+    "planet_probability": 0.995,
+    "raw_score": 1.0
+   },
+   {
+    "kepoi_name": "K02037.03",
+    "kepid": 9634821,
+    "koi_period": 8.563,
+    "koi_prad": 2.26,
+    "koi_model_snr": 15.2,
+    "koi_count": 3,
+    "koi_score": 1.0,
+    "planet_probability": 0.995,
+    "raw_score": 1.0
+   }
+  ]
+ }
+}
